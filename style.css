@@ -1,0 +1,142 @@
+header {
+    background-color: rgb(15, 15, 15);
+    color: rgb(235, 235, 235);
+    font-family: 'Gugi', cursive;
+    padding-bottom: 50px;
+    padding: 0px;
+    margin-bottom: 5px;
+}
+
+.logo {
+    height: 65px;
+    width: 65px;
+    float: left;
+    padding-bottom: 0px;
+    
+}
+
+.GR {
+    font-size: 50px;
+    padding-top: 5px;
+    padding-bottom: 0px;
+    margin: 0px;
+    
+}
+
+.container {
+    border: solid;
+    border-color: rgba(15, 15, 15, 0);
+    background-color: white;
+    padding: 100px;
+    border-radius: 150px;
+    background-color: rgb(19, 19, 19);
+    padding-top: 0px;
+    text-align: center;
+    padding-bottom: 5px;
+    margin-bottom: 55px;
+    
+}
+
+.signIn {
+   
+    float: right;
+    font-size: 12px;
+    bottom: 500px;
+    padding-bottom: 5px;
+    
+   
+   
+  
+    
+}
+
+.userInput {
+    float: right;
+}
+
+@media (min-width: 992px) {
+    #productCont {
+        width: 500px;
+    }
+} 
+
+#productCont {
+    max-width: 100%;
+    position: fixed;
+    right: 510px;
+    
+}
+
+#userImage {
+    height:150px;
+    width: 200px;
+    border-radius: 50px;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+}
+
+.signUp {
+    color: rgb(1, 205, 212);
+    float: right;
+    padding-bottom: 5px;
+    font-size: 17px;
+    padding-right: 5px;
+}
+
+#userImage {
+    height: 200px;
+    width: 300px;
+}
+
+.productInfo {
+    font-size: 15px;
+    color: rgb(240, 240, 240);
+    
+    
+}
+
+body {
+    font-family: 'Gugi', cursive;
+    background-image: url("http://epicwallpaperz.com/wallpaper-hd/dark-blue-wallpaper-high-definition-On-wallpaper-hd.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.prodTitle {
+    color: rgb(238, 238, 238);
+    padding-top: 20px;
+}
+
+.userRating, .userName {
+    color: rgb(238, 238, 238);
+}
+
+hr {
+    background-color: white;
+}
+
+
+.postButt {
+    background-color: rgb(15, 15, 15);
+    color: rgb(238, 238, 238);
+    float: right;
+    position: fixed;
+    right: 10px;
+    font-size: 20px;
+    
+}
+
+.signInButt {
+    font-size: 12px;
+}
+
+a {
+    color: rgb(238, 238, 238);
+}
+
+input {
+    background-color: rgb(228, 228, 228);
+}
+
+
+
