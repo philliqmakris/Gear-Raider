@@ -1,1 +1,1 @@
-# Project-2-Phil-Jack-
+In this project, we designed a site where users can post pictures, descriptions and ratings of music production related products. While any visitor to the sit may view all posts, users must sign up with a username and password to create posts.
