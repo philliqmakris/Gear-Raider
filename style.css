@@ -4,7 +4,8 @@ header {
     font-family: 'Gugi', cursive;
     padding-bottom: 50px;
     padding: 0px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    
 }
 
 .logo {
@@ -16,7 +17,7 @@ header {
 }
 
 .GR {
-    font-size: 50px;
+    font-size: 51px;
     padding-top: 5px;
     padding-bottom: 0px;
     margin: 0px;
@@ -25,7 +26,7 @@ header {
 
 .container {
     border: solid;
-    border-color: rgba(15, 15, 15, 0);
+    border-color: rgba(236, 236, 236, 0);
     background-color: white;
     padding: 100px;
     border-radius: 150px;
@@ -120,9 +121,10 @@ hr {
     background-color: rgb(15, 15, 15);
     color: rgb(238, 238, 238);
     float: right;
-    position: fixed;
+    margin-right:10px;
     right: 10px;
     font-size: 20px;
+    margin-top: 0px;
     
 }
 
@@ -137,6 +139,168 @@ a {
 input {
     background-color: rgb(228, 228, 228);
 }
+
+
+
+.item1 {
+    background-image: url("https://cdn.vox-cdn.com/thumbor/-bPj7Y_6-S59xlHYwItRFreyPok=/0x0:1024x704/1200x800/filters:focal(431x271:593x433)/cdn.vox-cdn.com/uploads/chorus_image/image/62979654/Behringer_Crave_synth_perspective_1280px_1200x825_1024x704.0.jpg");
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0);
+    padding: 102px;
+    margin: 10px;
+    background-size: cover;
+    float: left;
+    border-radius: 100px;
+    color: rgb(235, 235, 235);
+}
+
+.item2 {
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0);
+    padding: 102px;
+    margin: 10px;
+    margin-left: 10px;
+    background-size: cover;
+    float: left;
+    border-radius: 100px;
+    color: rgb(235, 235, 235);
+    background-image: url("https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Fforbes-finds%2Ffiles%2F2017%2F11%2F1-640.jpg");
+}
+
+.item3 {
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0);
+    padding: 102px;
+    margin: 10px;
+    background-size: cover;
+    float: left;
+    border-radius: 100px;
+    color: rgb(235, 235, 235);
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/9/9a/Panasonic_SL-S250C_with_Philips_LC0305_20110106.jpg")
+}
+
+.item4 {
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0);
+    padding: 102px;
+    margin: 10px;
+    background-size: cover;
+    float: left;
+    border-radius: 100px;
+    color: rgb(235, 235, 235);
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3HIFt4t3rRdPtPuaYuJk34jbhRDEIvZqvOrLlAM1Al1VIQLTB");
+}
+
+.item5 {
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0);
+    padding: 102px;
+    margin: 10px;
+    background-size: cover;
+    float: left;
+    border-radius: 100px;
+    color: rgb(235, 235, 235);
+    background-image: url("http://www.iheartsynths.com/wp-content/uploads/2014/02/minimoog.jpg");
+}
+
+.item6 {
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0);
+    padding: 102px;
+    margin: 10px;
+    background-size: cover;
+    float: left;
+    border-radius: 100px;
+    color: rgb(235, 235, 235);
+   background-image: url("https://zfvg91lawb41hpzaf1icl6u8-wpengine.netdna-ssl.com/wp-content/uploads/2016/05/The-Best-Studio-Monitors.jpg");
+}
+
+.item7 {
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0);
+    padding: 102px;
+    margin: 10px;
+    margin-left: 10px;
+    background-size: cover;
+    float: right;
+    border-radius: 100px;
+    color: rgb(235, 235, 235);
+    background-image: url("https://icdn2.digitaltrends.com/image/poster-for-5824603359001-720x720.jpg");
+}
+
+.item8 {
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0);
+    padding: 102px;
+    margin: 10px;
+    margin-left: 10px;
+    background-size: cover;
+    float: left;
+    border-radius: 100px;
+    color: rgb(235, 235, 235);
+    background-image: url("https://cnet1.cbsistatic.com/img/JrscGpF4LeP-w1GDK14r8LH8cOA=/2013/03/15/70b992a2-fdc7-11e2-8c7c-d4ae52e62bcc/_DSC4052.jpg");
+}
+
+.item9 {
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0);
+    padding: 102px;
+    margin: 10px;
+    margin-left: 10px;
+    background-size: cover;
+    float: right;
+    border-radius: 100px;
+    color: rgb(235, 235, 235);
+    background-image: url("https://img.letgo.com/images/4d/48/aa/c7/4d48aac7b3bcbacd3faa96196703abe9.jpeg?impolicy=img_600");
+}
+
+.item10 {
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0);
+    padding: 102px;
+    margin: 10px;
+    margin-left: 10px;
+    background-size: cover;
+    float: left;
+    border-radius: 100px;
+    color: rgb(235, 235, 235);
+    background-image: url("https://masters-of-music.com/wp-content/uploads/2016/07/EZdrummer-2-Metal-Machine-560x410.jpg");
+}
+
+.item11 {
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0);
+    padding: 102px;
+    margin: 10px;
+    margin-left: 10px;
+    background-size: cover;
+    float: right;
+    border-radius: 100px;
+    color: rgb(235, 235, 235);
+    background-image: url("https://dangerousmusic.com/wp-content/uploads/2019/02/D-BOX_Plus_FINAL-954x415.jpg");
+}
+
+.item12 {
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0);
+    padding: 102px;
+    margin: 10px;
+    margin-left: 10px;
+    background-size: cover;
+    float: left;
+    border-radius: 100px;
+    color: rgb(235, 235, 235);
+    background-image: url("https://i.ytimg.com/vi/bqk-uaiiqd8/maxresdefault.jpg");
+}
+
+
+
+
+
+
+
+
+
 
 
 

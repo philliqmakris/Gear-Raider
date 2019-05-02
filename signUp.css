@@ -83,6 +83,18 @@ a {
 
 }
 
+.back {
+    color: rgb(1, 205, 212);
+    float: right;
+    padding-bottom: 5px;
+    font-size: 25px;
+    top: 50px;
+    padding-right: 5px;
+    top: 10px;
+    
+    
+}
+
 
 
 
