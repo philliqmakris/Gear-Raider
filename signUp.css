@@ -1,0 +1,102 @@
+header {
+    background-color: rgb(15, 15, 15);
+    color: rgb(235, 235, 235);
+    font-family: 'Gugi', cursive;
+    padding-bottom: 50px;
+    padding: 0px;
+    margin-bottom: 105px;
+}
+
+.container {
+    max-width: 100%;
+}
+
+.logo {
+    height: 65px;
+    width: 65px;
+    float: left;
+    padding-bottom: 0px;
+    
+}
+
+.GR {
+    font-size: 50px;
+    padding-top: 5px;
+    padding-bottom: 0px;
+    margin: 0px;
+    
+}
+
+.container {
+    border: solid;
+    border-color: rgba(15, 15, 15, 0);
+    background-color: white;
+    padding: 100px;
+    border-radius: 350px;
+    background-color: rgb(14, 14, 14);
+    padding-top: 0px;
+    text-align: center;
+    padding-bottom: 5px;
+    max-width: 100%;
+    background-image: url("https://previews.123rf.com/images/vectortatu/vectortatu1702/vectortatu170200148/72604112-black-and-white-sketch-of-skull-and-headphones-vector-human-skull-music-lover-on-blackboard.jpg");
+    background-size: contain;
+    
+}
+
+#productCont {
+    max-width: 100%;
+    position: fixed;
+    right: 510px;
+}
+
+body {
+    font-family: 'Gugi', cursive;
+    background-image: url("http://epicwallpaperz.com/wallpaper-hd/dark-blue-wallpaper-high-definition-On-wallpaper-hd.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.form-group {
+    padding-left: 450px;
+    padding-right: 450px;
+    color: rgb(235, 235, 235);
+    font-size: 50px;
+}
+
+.btn {
+    background-color: black;
+    color: rgb(233, 233, 233);
+    font-size: 30px;
+}
+
+.form-control {
+    font-size: 30px;
+}
+
+a {
+    color: rgb(238, 238, 238);
+}
+
+.box {
+    background-color: rgba(0, 0, 0, 0.767);
+    border-radius: 500px;
+
+}
+
+.back {
+    color: rgb(1, 205, 212);
+    float: right;
+    padding-bottom: 5px;
+    font-size: 25px;
+    top: 50px;
+    padding-right: 5px;
+    top: 10px;
+    
+    
+}
+
+
+
+
+
+

@@ -1,0 +1,200 @@
+header {
+    background-color: rgb(15, 15, 15);
+    color: rgb(235, 235, 235);
+    font-family: 'Gugi', cursive;
+    padding-bottom: 50px;
+    padding: 0px;
+    margin-bottom: 10px;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    
+}
+
+.logo {
+    height: 65px;
+    width: 65px;
+    float: left;
+    padding-bottom: 0px;
+    
+}
+
+.GR {
+    font-size: 51px;
+    padding-top: 5px;
+    padding-bottom: 0px;
+    margin: 0px;
+    
+}
+
+.productView {
+    border: solid;
+    border-color: rgba(236, 236, 236, 0);
+    background-color: white;
+    border-radius: 80px;
+    background-color: rgb(19, 19, 19);
+    padding-top: 0px;
+    text-align: center;
+    padding-bottom: 5px;
+    margin-bottom: 55px;
+    height: 80vh;
+    max-width: 100%;
+
+    right: 510px;
+    
+}
+
+.productViewTitle {
+    z-index: 99;
+}
+
+.productViewContent {
+    margin: 0 30px 30px 30px;
+    z-index: 0;
+    height: 80%;
+    overflow-y: auto;
+}
+
+.signIn {
+   
+    float: right;
+    font-size: 12px;
+    bottom: 500px;
+    padding-bottom: 5px;
+}
+
+.userInput {
+    float: right;
+}
+
+@media (min-width: 992px) {
+    #productCont {
+        width: 500px;
+    }
+} 
+
+
+#userImage {
+    height:150px;
+    width: 200px;
+    border-radius: 50px;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+}
+
+.signUp {
+    color: rgb(1, 205, 212);
+    float: right;
+    padding-bottom: 5px;
+    font-size: 17px;
+    padding-right: 5px;
+}
+
+#userImage {
+    height: 200px;
+    width: 300px;
+}
+
+.productInfo {
+    font-size: 15px;
+    color: rgb(240, 240, 240);
+}
+
+body {
+    font-family: 'Gugi', cursive;
+    background-image: url("http://epicwallpaperz.com/wallpaper-hd/dark-blue-wallpaper-high-definition-On-wallpaper-hd.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.prodTitle {
+    color: rgb(238, 238, 238);
+    padding-top: 20px;
+}
+
+.userRating, .userName {
+    color: rgb(238, 238, 238);
+}
+
+hr {
+    background-color: white;
+}
+
+.postButt {
+    background-color: rgb(15, 15, 15);
+    color: rgb(238, 238, 238);
+    float: right;
+    margin-right:10px;
+    right: 10px;
+    font-size: 20px;
+    margin-top: 0px;
+}
+
+.signInButt {
+    font-size: 12px;
+}
+
+a {
+    color: rgb(238, 238, 238);
+}
+
+input {
+    background-color: rgb(228, 228, 228);
+}
+
+.whole {
+    padding-top: 120px;
+    z-index: 0;
+}
+
+.tileArea {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.itemImage {
+    height: 160px;
+    width: 160px;
+    border-radius: 80px;
+}
+
+/*PRODUCT SECTION*/
+.item {
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0);
+    color: rgb(235, 235, 235);
+    margin: 0 0 20px 0;
+}
+
+
+
+/*
+    : url("https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Fforbes-finds%2Ffiles%2F2017%2F11%2F1-640.jpg");
+
+    -: url("https://upload.wikimedia.org/wikipedia/commons/9/9a/Panasonic_SL-S250C_with_Philips_LC0305_20110106.jpg")
+
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3HIFt4t3rRdPtPuaYuJk34jbhRDEIvZqvOrLlAM1Al1VIQLTB");
+
+    background-image: url("http://www.iheartsynths.com/wp-content/uploads/2014/02/minimoog.jpg");
+
+   background-image: url("https://zfvg91lawb41hpzaf1icl6u8-wpengine.netdna-ssl.com/wp-content/uploads/2016/05/The-Best-Studio-Monitors.jpg");
+
+    background-image: url("https://icdn2.digitaltrends.com/image/poster-for-5824603359001-720x720.jpg");
+
+    background-image: url("https://cnet1.cbsistatic.com/img/JrscGpF4LeP-w1GDK14r8LH8cOA=/2013/03/15/70b992a2-fdc7-11e2-8c7c-d4ae52e62bcc/_DSC4052.jpg");
+
+    background-image: url("https://img.letgo.com/images/4d/48/aa/c7/4d48aac7b3bcbacd3faa96196703abe9.jpeg?impolicy=img_600");
+
+    background-image: url("https://masters-of-music.com/wp-content/uploads/2016/07/EZdrummer-2-Metal-Machine-560x410.jpg");
+
+    background-image: url("https://dangerousmusic.com/wp-content/uploads/2019/02/D-BOX_Plus_FINAL-954x415.jpg");
+
+    background-image: url("https://i.ytimg.com/vi/bqk-uaiiqd8/maxresdefault.jpg");
+*/
+
+
+
+
+
+
