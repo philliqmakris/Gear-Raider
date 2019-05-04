@@ -39,7 +39,7 @@ header {
     padding-bottom: 5px;
     max-width: 100%;
     margin-bottom: 25px;
-    background-image: url("https://previews.123rf.com/images/vectortatu/vectortatu1702/vectortatu170200148/72604112-black-and-white-sketch-of-skull-and-headphones-vector-human-skull-music-lover-on-blackboard.jpg");
+    background-image: url("./public/images/logo.jpg");
     background-size: cover;
 }
 
@@ -51,7 +51,7 @@ header {
 
 body {
     font-family: 'Gugi', cursive;
-    background-image: url("http://epicwallpaperz.com/wallpaper-hd/dark-blue-wallpaper-high-definition-On-wallpaper-hd.jpg");
+    background-image: url("./public/images/bg.jpg");
     background-attachment: fixed;
     background-size: cover;
     color: rgb(231, 231, 231);

@@ -1,3 +1,10 @@
+body {
+    font-family: 'Gugi', cursive;
+    background-image: url("./public/images/bg.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
 header {
     background-color: rgb(15, 15, 15);
     color: rgb(235, 235, 235);
@@ -7,72 +14,86 @@ header {
     margin-bottom: 10px;
     position: fixed;
     z-index: 99;
+    height: 70px;
     width: 100%;
-    
 }
+
+hr {
+    background-color: white;
+}
+
+a {
+    color: rgb(238, 238, 238);
+}
+
+input {
+    background-color: rgb(228, 228, 228);
+}
+
+@media (min-width: 992px) {
+
+} 
 
 .logo {
     height: 65px;
     width: 65px;
     float: left;
-    padding-bottom: 0px;
+    padding-bottom: 0;
     
 }
 
 .GR {
     font-size: 51px;
     padding-top: 5px;
-    padding-bottom: 0px;
-    margin: 0px;
-    
+    padding-bottom: 0;
+    margin: 0;
 }
 
-.productView {
-    border: solid;
-    border-color: rgba(236, 236, 236, 0);
-    background-color: white;
-    border-radius: 80px;
-    background-color: rgb(19, 19, 19);
-    padding-top: 0px;
-    text-align: center;
-    padding-bottom: 5px;
-    margin-bottom: 55px;
-    height: 80vh;
-    max-width: 100%;
-
-    right: 510px;
-    
-}
-
-.productViewTitle {
-    z-index: 99;
-}
-
-.productViewContent {
-    margin: 0 30px 30px 30px;
-    z-index: 0;
-    height: 80%;
-    overflow-y: auto;
+#loginArea {
+    padding: 10px;
+    float: right;
 }
 
 .signIn {
-   
     float: right;
     font-size: 12px;
     bottom: 500px;
     padding-bottom: 5px;
 }
 
+.newPost {
+    position: fixed;
+    top: 92%;
+    left: 2%;
+}
+
+.productView {
+    border-radius: 80px;
+    background-color: rgb(19, 19, 19);
+    padding: 0 0 5px 0;
+    text-align: center;
+    height: 80vh;
+    width: 100%;
+    position: sticky;
+    top: 100px;
+}
+
+.productViewTitle {
+    z-index: 99;
+    padding: 0 5% 0 5%;
+}
+
+.productViewContent {
+    margin: 0 30px 30px 30px;
+    padding: 10px;
+    z-index: 0;
+    height: 80%;
+    overflow-y: auto;
+}
+
 .userInput {
     float: right;
 }
-
-@media (min-width: 992px) {
-    #productCont {
-        width: 500px;
-    }
-} 
-
 
 #userImage {
     height:150px;
@@ -82,12 +103,9 @@ header {
     border-color: rgb(0, 0, 0);
 }
 
-.signUp {
+.signInUp {
     color: rgb(1, 205, 212);
-    float: right;
-    padding-bottom: 5px;
     font-size: 17px;
-    padding-right: 5px;
 }
 
 #userImage {
@@ -100,13 +118,6 @@ header {
     color: rgb(240, 240, 240);
 }
 
-body {
-    font-family: 'Gugi', cursive;
-    background-image: url("http://epicwallpaperz.com/wallpaper-hd/dark-blue-wallpaper-high-definition-On-wallpaper-hd.jpg");
-    background-attachment: fixed;
-    background-size: cover;
-}
-
 .prodTitle {
     color: rgb(238, 238, 238);
     padding-top: 20px;
@@ -116,34 +127,19 @@ body {
     color: rgb(238, 238, 238);
 }
 
-hr {
-    background-color: white;
-}
-
 .postButt {
     background-color: rgb(15, 15, 15);
     color: rgb(238, 238, 238);
-    float: right;
-    margin-right:10px;
     right: 10px;
     font-size: 20px;
-    margin-top: 0px;
 }
 
 .signInButt {
     font-size: 12px;
 }
 
-a {
-    color: rgb(238, 238, 238);
-}
-
-input {
-    background-color: rgb(228, 228, 228);
-}
-
 .whole {
-    padding-top: 120px;
+    padding-top: 100px;
     z-index: 0;
 }
 
@@ -161,8 +157,7 @@ input {
 
 /*PRODUCT SECTION*/
 .item {
-    border-style: solid;
-    border-color: rgba(0, 0, 0, 0);
+    padding: 3%;
     color: rgb(235, 235, 235);
     margin: 0 0 20px 0;
 }
