@@ -2,14 +2,14 @@
   "development": {
     "username": "root",
     "password": "password",
-    "database": "gear-raider",
+    "database": "gearraider",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password": "password",
-    "database": "gear-raider-test",
+    "database": "gearraidertest",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
