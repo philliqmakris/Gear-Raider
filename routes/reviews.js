@@ -67,16 +67,6 @@ router.post('/', auth, async (req, res) => {
   res.status(200).json(review);
 });
 
-// router.put('/:id', auth, async (req, res) => {
-//   // const { error } = validate(req.body); 
-//   // if (error) return res.status(400).json(error.details[0].message);
-
-//   console.log('reviews put')
-// });
-
-// router.delete('/:id', auth, async (req, res) => {
-//   console.log('reviews delete')
-// });
 
 sendReviews(moreOptions, page) {
   const limit = 50;
