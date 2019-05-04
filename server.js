@@ -12,15 +12,6 @@ require("./routes/htmlRoutes")(app);
 require('./startup/prod')(app);
 require('./startup/middleware')(app);
 
-// Handlebars
-app.engine(
-  "handlebars",
-  exphbs({
-    defaultLayout: "main"
-  }),
-);
-app.set("view engine", "handlebars");
-
 const syncOptions = { force: false };
 
 // If running a test, set syncOptions.force to true

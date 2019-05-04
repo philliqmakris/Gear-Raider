@@ -106,6 +106,7 @@ input {
 .signInUp {
     color: rgb(1, 205, 212);
     font-size: 17px;
+    cursor: pointer;
 }
 
 #userImage {
