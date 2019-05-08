@@ -8,7 +8,6 @@ const app = express();
 require('./startup/ex')(app);
 require('./startup/cors')(app);
 require('./startup/routes')(app);
-require("./routes/htmlRoutes")(app);
 require('./startup/prod')(app);
 require('./startup/middleware')(app);
 
