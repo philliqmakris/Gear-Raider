@@ -32,17 +32,17 @@ router.post('/', auth, async (req, res) => {
   // const { error } = validate(req.body.review);
   // if (error) return res.status(400).json(error.details[0].message);
 
-  const review = req.body;
+  let review = req.body;
   review.userId = req.user.id;
 
-  const review = await db.Review.create(review);
+  review = await db.Review.create(review);
 
   res.status(200).json(review);
 });
 
 
 // handles pagination and sends query result; broken out in case we have multiple get handlers
-sendReviews(moreOptions, page) {
+async function sendReviews(moreOptions, page) {
   const limit = 20;
   let offset = (page - 1) * limit;
 
