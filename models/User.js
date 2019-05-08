@@ -13,15 +13,6 @@ module.exports = function(sequelize, DataTypes) {
         len: [1, 255],
       },
     },
-    // email: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    //   unique: true,
-    //   validate: {
-    //     isEmail: true,
-    //     len: [1, 255],
-    //   },
-    // },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
