@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/style.css">
     <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
 
     <title>Gear Raider</title>
@@ -15,10 +15,10 @@
 
 <body>
     <header>
-        
+
         <div class="row">
             <div class="col-lg-8">
-                <img class="logo" src="./public/images/logo.jpg">
+                <img class="logo" src="./images/logo.jpg">
                 <h1 class="GR"><a href="index.html">Gear Raider</a></h1>
             </div>
 
@@ -30,13 +30,21 @@
                     <span id="loginLink" class="signInUp">Log In</span>
                 </div>
 
-                <span class="searchArea"><button class="searchButton">Search</button><input class="searchArea" type="text"></span>
                 
             </div>
         </div>
+    
     </header>
-    
-    
+<br><br><br><br>
+
+<div class="container">
+   <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <button  type="button" id="button-addon1">Search</button>
+  </div>
+  <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+</div>
+</div>
 
     <div class="whole">
         <div class="row">
@@ -91,12 +99,23 @@
 
                 <div class="productViewContent">
                     <h4 class="userName">(user name)</h4>
-                    <h4 class="userRating">Rating: _/5</h4>
+                    <h4 class="userRating">Rating: /5</h4>
                     <img id="userImage"
                         src="https://cnet2.cbsistatic.com/img/kR5_KSpAwf4zADDck7vXe8_MfN0=/1204x677/2018/09/05/3edb6994-9cdb-4613-b43a-c13dae2aeaac/02-q-acoustics-3020i.jpg">
-                    <p class="productInfo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, suntLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <p class="productInfo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                        occaecat cupidatat non proident, suntLorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                        laborum.
                     </p>
                 </div>
+                <br>
+
             </div>
 
             <div class="col-md-4 tileArea">
@@ -155,21 +174,44 @@
 </body>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="./js/index.js"></script>
 <script>
     $('#loginLink').click(showLogin);
 
 
     function showLogin() {
         const html = `
-            User Name:
-            <input type="text" placeholder="Username">
+            <span>User Name:
+            <input class="jqHeadInput type="text" placeholder="Username">
             Password:
-            <input type="password" placeholder="password">
-            <button class="signInButt" type="submit">Log In</button>
+            <input class="jqHeadInput" type="password" placeholder="password">
+            <button onclick="loggedIn()" class="signInButt" type="submit">Log In</button></span>
         `;
 
         $('#loginArea').html(html);
-    }
+        
+    };
+
+const loggedIn = () => {
+    const signedIn = `<span class="back">Signed In As: $('usernameId')</span> 
+        <div><span class="signOut">Sign Out</span></div>
+    `;
+    
+    $('#loginArea').html(signedIn);
+   
+
+    
+};
+
+
+
+
+
+
+
+
+
+
 
 </script>
 
