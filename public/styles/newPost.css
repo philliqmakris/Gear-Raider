@@ -4,7 +4,7 @@ header {
     font-family: 'Gugi', cursive;
     padding-bottom: 50px;
     padding: 0px;
-    margin-bottom: 105px;
+    margin-bottom: 15px;
 }
 
 .container {
@@ -32,15 +32,15 @@ header {
     border-color: rgba(15, 15, 15, 0);
     background-color: white;
     padding: 100px;
-    border-radius: 350px;
+    border-radius: 1000px;
     background-color: rgb(14, 14, 14);
     padding-top: 0px;
     text-align: center;
     padding-bottom: 5px;
     max-width: 100%;
-    background-image: url("./public/images/logo.jpg");
-    background-size: contain;
-    
+    margin-bottom: 25px;
+    background-image: url("../images/logo.jpg");
+    background-size: cover;
 }
 
 #productCont {
@@ -51,16 +51,18 @@ header {
 
 body {
     font-family: 'Gugi', cursive;
-    background-image: url("./public/images/bg.jpg");
+    background-image: url("../images/bg.jpg");
     background-attachment: fixed;
     background-size: cover;
+    color: rgb(231, 231, 231);
 }
 
 .form-group {
     padding-left: 450px;
     padding-right: 450px;
     color: rgb(235, 235, 235);
-    font-size: 50px;
+    font-size: 40px;
+    text-align: center;
 }
 
 .btn {
@@ -71,29 +73,50 @@ body {
 
 .form-control {
     font-size: 30px;
+    background-color: rgb(231, 231, 231);
 }
 
 a {
     color: rgb(238, 238, 238);
 }
 
+@media (min-width: 992px) {
+    .container {
+        width: 1450px;
+    }
+} 
+
 .box {
     background-color: rgba(0, 0, 0, 0.767);
     border-radius: 500px;
+    margin: 25px;
+    padding-bottom: 25px;
 
+}
+
+.title {
+    text-align: center;
+    font-size: 70px;
+    margin-bottom: 15px;
+}
+
+input {
+    font-size: 20px;
 }
 
 .back {
     color: rgb(1, 205, 212);
     float: right;
-    padding-bottom: 5px;
+    padding-top: 12px;
+    padding-bottom: 12px;
     font-size: 25px;
-    top: 50px;
-    padding-right: 5px;
-    top: 10px;
+    padding-right: 10px;
+    
     
     
 }
+
+
 
 
 
