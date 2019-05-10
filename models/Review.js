@@ -35,6 +35,15 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
+  Review.associate = models => {
+    Review.belongsTo(models.User, {
+      foreignKey: {
+        name: 'userId',
+        //allowNull: false, // add cascade delete to use this
+      },
+    });
+  };
+
   return Review;
 };
 

@@ -6,6 +6,8 @@ module.exports = function (req, res, next) {
 
   try {
     const decoded = jwt.verify(token, process.env.jwtPrivateKey);
+    if (decoded.exp < Date.now()) throw new Error('token expired');
+    
     req.user = decoded;
     next();
   }

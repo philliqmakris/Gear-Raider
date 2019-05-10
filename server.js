@@ -2,7 +2,6 @@ require("dotenv").config();
 const jwt = require('jsonwebtoken');
 const db = require("./models");
 const express = require("express");
-const exphbs = require("express-handlebars");
 const app = express();
 
 require('./startup/ex')(app);
