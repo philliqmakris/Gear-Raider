@@ -222,6 +222,20 @@ input {
     
 }
 
+.nextPage {
+    color: rgb(0, 222, 230);
+    text-align: center;
+    cursor: pointer;
+}
+
+#nextPageCont {
+    background-color: rgba(0, 0, 0, 0.781);
+    padding-left: 8px;
+    padding-right: 5px;
+    font-size: 18px;
+    border-radius: 99px;
+}
+
 
 
 
