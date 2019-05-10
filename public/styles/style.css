@@ -216,7 +216,7 @@ input {
 .signOut {
     color: rgb(0, 222, 230);
     float: right;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
     padding-right: 10px;
     cursor: pointer;
     
