@@ -1,12 +1,12 @@
+const validator = require('validator');
 const auth = require('../middleware/auth');
-// const Joi = require('joi');
 const db = require("../models/index");
 const express = require('express');
 const router = express.Router();
 
 // get all reviews or by product or username
-router.get('/:page', (req, res) => {
-  let page = parseInt(req.params.page) || 1;
+router.get('/', (req, res) => {
+  let page = parseInt(req.query.page) || 1;
   const product = req.query.product;
   const user = req.query.user;
 
@@ -14,65 +14,67 @@ router.get('/:page', (req, res) => {
     include: [
       {
         model: db.User,
-        through: {
-          attributes: ['username', 'id'],
-        },
+        attributes: ['username', 'id'],
+        nested: true,
       },
     ],
+    where: {},
   };
 
   if (product) options.where.product = product;
   if (user) options.where.userId = user;
 
-  sendReviews(options, page);  
+  sendReviews(res, options, page);
 });
+
 
 // create a review
 router.post('/', auth, async (req, res) => {
-  // const { error } = validate(req.body.review);
-  // if (error) return res.status(400).json(error.details[0].message);
-
   let review = req.body;
   review.userId = req.user.id;
 
-  review = await db.Review.create(review);
+  // validation
+  if (!(
+    validator.isURL(review.imgUrl, { protocols: ['http','https'] })
+    && validator.isInt(review.rating + '', { min: 0, max: 5, allow_leading_zeroes: false })
+    && validator.isLength(review.text, { min:6, max: 1023 })
+  )) return res.status(400).json('Invalid review');
 
+  for (let prop in review) {
+    if (typeof review[prop] === 'object') return res.status(400).json('Reviews may not contain nested data.');
+  }
+
+  // sanitize text
+  review.text = validator.escape(review.text.trim());
+  review.product = validator.escape(review.product.trim());
+
+  review = await db.Review.create(review);
   res.status(200).json(review);
 });
 
 
-// handles pagination and sends query result; broken out in case we have multiple get handlers
-async function sendReviews(moreOptions, page) {
+// handles pagination and sends query result; broken out in case we need multiple get handlers
+async function sendReviews(res, options, page) {
   const limit = 20;
   let offset = (page - 1) * limit;
 
-  let options = {
-    attributes: ['id', 'product', 'rating', 'imgUrl'],
+  let allOptions = {
     limit,
     offset,
     $sort: { id: 1 },
   };
 
-  if (moreOptions) options = Object.assign(options, moreOptions);
+  if (options) allOptions = Object.assign(allOptions, options);
 
-  const result = await db.Review.findAndCountAll(options);
-  if (!result || !result.reviews || !result.reviews[0]) return res.status(404).json('No reviews found.');
+  const result = await db.Review.findAndCountAll(allOptions);
+  const reviews = result.rows;
+
+  if (reviews.length === 0) return res.status(404).json('No reviews found.');
   
   const pages = Math.ceil(result.count / limit);
   const end = result.count < limit;
-  const reviews = result.rows;
 
-  res.status(200).json({ reviews, 'count': result.count, pages, endFlag });
+  res.status(200).json({ reviews, 'count': result.count, pages, end });
 }
-
-// function validate(review) {
-//     const schema = {
-//       username: Joi.string().min(5).max(50).required(),
-//       email: Joi.string().min(5).max(255).required().email(),
-//       password: Joi.string().min(5).max(255).required()
-//     };
-
-//     return Joi.validate(this, schema);
-//   }
 
 module.exports = router;

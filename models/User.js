@@ -16,6 +16,9 @@ module.exports = function(sequelize, DataTypes) {
     password: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        len: [8, 255],
+      },
     },
   });
 
@@ -24,7 +27,7 @@ module.exports = function(sequelize, DataTypes) {
       foreignKey: {
         name: 'userId',
         //allowNull: false, // add cascade delete to use this
-        constraints: false,
+        // constraints: false,
       },
     });
   };
