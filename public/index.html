@@ -9,7 +9,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./styles/style.css">
     <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
-    <script src="./js/createPost.js"></script>
 
     <title>Gear Raider</title>
 </head>
@@ -116,7 +115,10 @@
                         laborum.
                     </p>
                 </div>
-                <br>
+                <br><br>
+               
+                    <span id="nextPageCont"><span class="nextPage">Next Page --></span></span>
+                
 
             </div>
 
@@ -178,6 +180,61 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript" src="./js/index.js"></script>
 <script>
+    $(document).ready(function () {
+        getReviews("http://localhost:3000/api/reviews", { product: 'mixer' });
+        populateTiles();
+    });
+
+    function getReviews(url, query = {}) {
+        const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNTU3MzQ5OTI5fQ.a-k86-RsaKty6lBf1mm_VWtVruo6rDGLaZ91kVsCKAg';
+        let queryString = '';
+        if (query.product) {
+            queryString += '?product=' + query.product;
+        }
+
+        // if (query.userId)
+
+        fetch(url + queryString, {
+            method: 'GET',
+            mode: 'cors',
+            headers: {
+                "Content-Type": "application/json",
+                'x-auth-token': token,
+            }
+        })
+            .then(async res => {
+                if (res.status !== 200) throw new Error(res.status + ' ' + await res.text());
+                return res.json();
+            })
+            .then(
+                result => {
+                    // call populateTiles with result.reviews
+                    console.log(result);
+                },
+                error => {
+                    console.log(error)
+                }
+            );
+    }
+
+    // don't forget to add a next page button, don't need to hook it up
+
+    function populateTiles(tiles) {
+        // clear the tile areas
+
+        // split tiles array apart into halves (two variables)
+        // iterate over the tiles with forEach
+        // use jQuery to append each tile to the DOM
+        // (see below, use ${tile.imgUrl} to enter data)
+        const html = `
+        <div class="item">
+            <img class="itemImage" src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Panasonic_SL-S250C_with_Philips_LC0305_20110106.jpg">
+        </div>
+        `;
+    }
+
+
+
 
     ///////////////LOGIN//////////////////////
     $('#loginLink').click(showLogin);
@@ -209,21 +266,21 @@
         // }
     };
 
-    const sendLoginRequest = (uName, pWord) => {
-        console.log(uName, pWord);
-        //needs API URL
-        $.post("ajax/test.html", { username: uName, password: pWord }, function (data) {
-            $(".result").html(data);
-        });
-    }
+    // const sendLoginRequest = (uName, pWord) => {
+    //     console.log(uName, pWord);
+    //     //needs API URL
+    //     $.post("ajax/test.html", { username: uName, password: pWord }, function (data) {
+    //         $(".result").html(data);
+    //     });
+    // }
     /////////////////////////////////////////////////////////////
 
 
     ////////////////SIGN OUT//////////////////////
-    
+
 
     const signOut = () => {
-        
+
     }
 
 
