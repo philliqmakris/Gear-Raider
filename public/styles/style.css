@@ -72,6 +72,26 @@ input {
     left: 2%;
 }
 
+#nextPageBtn {
+    position: fixed;
+    top: 92%;
+    left: 93%;
+    background-color: rgb(15, 15, 15);
+    color: rgb(238, 238, 238);
+    right: 10px;
+    font-size: 20px;
+}
+
+#prevPageBtn {
+    position: fixed;
+    top: 92%;
+    left: 85%;
+    background-color: rgb(15, 15, 15);
+    color: rgb(238, 238, 238);
+    right: 10px;
+    font-size: 20px;
+}
+
 .productView {
     border-radius: 80px;
     background-color: rgb(19, 19, 19);
@@ -134,7 +154,6 @@ input {
 .postButt {
     background-color: rgb(15, 15, 15);
     color: rgb(238, 238, 238);
-    right: 10px;
     font-size: 20px;
 }
 
@@ -220,12 +239,6 @@ input {
     padding-right: 10px;
     cursor: pointer;
     
-}
-
-.nextPage {
-    color: rgb(0, 222, 230);
-    text-align: center;
-    cursor: pointer;
 }
 
 #nextPageCont {
