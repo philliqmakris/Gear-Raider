@@ -24,8 +24,10 @@ router.post('/', async (req, res) => {
   	password,
   });
 
-  const token = jwt.sign({ id: user.id }, process.env.jwtPrivateKey);
-  res.header('x-auth-token', token).json({ username: user.username, id: user.id });
+  // token expires in 3 days
+  const exp = Date.now() + 4320000;
+  const token = jwt.sign({ id: user.id, exp, }, process.env.jwtPrivateKey);
+  res.header('x-auth-token', token).json({ username: user.username });
 });
 
 module.exports = router;

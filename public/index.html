@@ -2,175 +2,82 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./styles/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="./styles/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
 
-    <title>Gear Raider</title>
+  <title>Gear Raider</title>
 </head>
 
 <body>
-    <header>
+  <header>
 
-        <div class="row">
-            <div class="col-lg-8">
-                <img class="logo" src="./images/logo.jpg">
-                <h1 class="GR"><a href="index.html">Gear Raider</a></h1>
-            </div>
+    <div class="row">
+      <div class="col-lg-8">
+        <img class="logo" src="./images/logo.jpg">
+        <h1 class="GR"><a href="index.html">Gear Raider</a></h1>
+      </div>
 
-            <div class="col-lg-4">
+      <div class="col-lg-4">
 
-                <div id="loginArea">
-                    <a class="signInUp" href="signUp.html">Sign Up</a>
-                    <br />
-                    <span id="loginLink" class="signInUp">Log In</span>
-                </div>
-
-
-            </div>
+        <div id="loginArea">
+          <a class="signInUp" href="signUp.html">Sign Up</a>
+          <br />
+          <span id="loginLink" class="signInUp">Log In</span>
         </div>
 
-    </header>
-    <br><br><br><br>
-
-    <div class="container">
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <button type="button" id="button-addon1">Search</button>
-            </div>
-            <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
-                aria-describedby="button-addon1">
-        </div>
+      </div>
     </div>
 
-    <div class="whole">
-        <div class="row">
-            <div class="col-md-4 tileArea">
-                <div class="item">
-                    <img class="itemImage"
-                        src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Panasonic_SL-S250C_with_Philips_LC0305_20110106.jpg">
-                </div>
-                <div class="item">
-                    <img class="itemImage"
-                        src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Panasonic_SL-S250C_with_Philips_LC0305_20110106.jpg">
-                </div>
-                <div class="item">
-                    <img class="itemImage"
-                        src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Panasonic_SL-S250C_with_Philips_LC0305_20110106.jpg">
-                </div>
-                <div class="item">
-                    <img class="itemImage"
-                        src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Panasonic_SL-S250C_with_Philips_LC0305_20110106.jpg">
-                </div>
-                <div class="item">
-                    <img class="itemImage"
-                        src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Panasonic_SL-S250C_with_Philips_LC0305_20110106.jpg">
-                </div>
-                <div class="item">
-                    <img class="itemImage"
-                        src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Panasonic_SL-S250C_with_Philips_LC0305_20110106.jpg">
-                </div>
-                <div class="item">
-                    <img class="itemImage"
-                        src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Panasonic_SL-S250C_with_Philips_LC0305_20110106.jpg">
-                </div>
-                <div class="item">
-                    <img class="itemImage"
-                        src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Panasonic_SL-S250C_with_Philips_LC0305_20110106.jpg">
-                </div>
-                <div class="item">
-                    <img class="itemImage"
-                        src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Panasonic_SL-S250C_with_Philips_LC0305_20110106.jpg">
-                </div>
-                <div class="item">
-                    <img class="itemImage"
-                        src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Panasonic_SL-S250C_with_Philips_LC0305_20110106.jpg">
-                </div>
-            </div>
+  </header>
 
-            <div class="col-md-4 productView">
-                <div class="productViewTitle">
-                    <h3 class="prodTitle"></h3>
-                    <hr />
-                </div>
-
-                <div class="productViewContent">
-                    <h4 class="userName">(user name)</h4>
-                    <h4 class="userRating">Rating:<span id="rating"></span>/5</h4>
-                    <img id="userImage">
-
-                    <p class="productInfo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                        occaecat cupidatat non proident, suntLorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                        laborum.
-                    </p>
-                </div>
-                <br><br>
-               
-                    <span id="nextPageCont"><span class="nextPage">Next Page --></span></span>
-                
-
-            </div>
-
-            <div class="col-md-4 tileArea">
-                <div class="item">
-                    <img class="itemImage"
-                        src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Panasonic_SL-S250C_with_Philips_LC0305_20110106.jpg">
-                </div>
-                <div class="item">
-                    <img class="itemImage"
-                        src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Panasonic_SL-S250C_with_Philips_LC0305_20110106.jpg">
-                </div>
-                <div class="item">
-                    <img class="itemImage"
-                        src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Panasonic_SL-S250C_with_Philips_LC0305_20110106.jpg">
-                </div>
-                <div class="item">
-                    <img class="itemImage"
-                        src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Panasonic_SL-S250C_with_Philips_LC0305_20110106.jpg">
-                </div>
-                <div class="item">
-                    <img class="itemImage"
-                        src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Panasonic_SL-S250C_with_Philips_LC0305_20110106.jpg">
-                </div>
-                <div class="item">
-                    <img class="itemImage"
-                        src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Panasonic_SL-S250C_with_Philips_LC0305_20110106.jpg">
-                </div>
-                <div class="item">
-                    <img class="itemImage"
-                        src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Panasonic_SL-S250C_with_Philips_LC0305_20110106.jpg">
-                </div>
-                <div class="item">
-                    <img class="itemImage"
-                        src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Panasonic_SL-S250C_with_Philips_LC0305_20110106.jpg">
-                </div>
-                <div class="item">
-                    <img class="itemImage"
-                        src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Panasonic_SL-S250C_with_Philips_LC0305_20110106.jpg">
-                </div>
-                <div class="item">
-                    <img class="itemImage"
-                        src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Panasonic_SL-S250C_with_Philips_LC0305_20110106.jpg">
-                </div>
-            </div>
-
-            <a class="newPost" href="newPost.html">
-                <button class="postButt">+ New Post</button>
-            </a>
-
-        </div>
+  <div class="container searchBar">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <button type="button" id="searchButton">Product Search</button>
+      </div>
+      <input type="text" id="searchInput" class="form-control" placeholder="" aria-label="Example text with button addon"
+        aria-describedby="button-addon1">
     </div>
+  </div>
+
+  <div class="whole">
+    <div class="row">
+      
+      <div id="tileAreaL" class="col-md-4 tileArea noselect"></div>
+
+      <div class="col-md-4 productView">
+        <div class="productViewTitle">
+          <h3 id="prodTitle">Welcome!</h3>
+          <hr />
+        </div>
+
+        <div class="productViewContent">
+          <h4 id="userName"></h4>
+          <h4 id="userRating">choose a review</h4>
+          <img id="userImage" src="./images/logo.jpg" />
+          <p id="productInfo"></p>
+        </div>
+        <br><br>
+         
+          <span id="nextPageCont"><span class="nextPage">Next Page --></span></span>
+        
+
+      </div>
+
+      <div id="tileAreaR" class="col-md-4 tileArea noselect"></div>
+
+      <a class="newPost" href="newPost.html">
+        <button class="postButt">+ New Post</button>
+      </a>
+
+    </div>
+  </div>
 
 
 
@@ -179,123 +86,5 @@
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript" src="./js/index.js"></script>
-<script>
-    $(document).ready(function () {
-        getReviews("http://localhost:3000/api/reviews", { product: 'mixer' });
-        populateTiles();
-    });
-
-    function getReviews(url, query = {}) {
-        const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNTU3MzQ5OTI5fQ.a-k86-RsaKty6lBf1mm_VWtVruo6rDGLaZ91kVsCKAg';
-        let queryString = '';
-        if (query.product) {
-            queryString += '?product=' + query.product;
-        }
-
-        // if (query.userId)
-
-        fetch(url + queryString, {
-            method: 'GET',
-            mode: 'cors',
-            headers: {
-                "Content-Type": "application/json",
-                'x-auth-token': token,
-            }
-        })
-            .then(async res => {
-                if (res.status !== 200) throw new Error(res.status + ' ' + await res.text());
-                return res.json();
-            })
-            .then(
-                result => {
-                    // call populateTiles with result.reviews
-                    console.log(result);
-                },
-                error => {
-                    console.log(error)
-                }
-            );
-    }
-
-    // don't forget to add a next page button, don't need to hook it up
-
-    function populateTiles(tiles) {
-        // clear the tile areas
-        $('.itemImage').hide();
-        // split tiles array apart into halves (two variables)
-        
-        // iterate over the tiles with forEach
-        // use jQuery to append each tile to the DOM
-        // (see below, use ${tile.imgUrl} to enter data)
-        const html = `
-        <div class="item">
-            <img class="itemImage" src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Panasonic_SL-S250C_with_Philips_LC0305_20110106.jpg">
-        </div>
-        `;
-    }
-
-
-
-
-    ///////////////LOGIN//////////////////////
-    $('#loginLink').click(showLogin);
-
-    function showLogin() {
-        const html = `
-            <span>User Name:
-            <input id="userNameInput" class="jqHeadInput type="text" placeholder="Username">
-            Password:
-            <input id="passwordInput" class="jqHeadInput" type="password" placeholder="password">
-            <button onclick="loggedIn()" class="signInButt" type="submit">Log In</button></span>
-        `;
-        $('#loginArea').html(html);
-    };
-
-    const loggedIn = () => {
-        const username = $('#userNameInput').val();
-        const password = $('#passwordInput').val();
-
-        sendLoginRequest(username, password);
-        const signedIn = `<span class="back">Signed In As: ${username}</span>
-        <div><a class="signOut" href="index.html">Sign Out</a></div>
-    `;
-        $('#loginArea').html(signedIn)
-        // if (sendloginRequest comes back negative) {
-        //     alert('Not a valid username/password')
-        // } else {
-        //     $('#loginArea').html(signedIn);
-        // }
-    };
-
-    // const sendLoginRequest = (uName, pWord) => {
-    //     console.log(uName, pWord);
-    //     //needs API URL
-    //     $.post("ajax/test.html", { username: uName, password: pWord }, function (data) {
-    //         $(".result").html(data);
-    //     });
-    // }
-    /////////////////////////////////////////////////////////////
-
-
-    ////////////////SIGN OUT//////////////////////
-
-
-    const signOut = () => {
-
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-</script>
-
+<script type="text/javascript" src="./js/cookies.js"></script>
 </html>
