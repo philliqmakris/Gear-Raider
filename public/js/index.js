@@ -3,32 +3,8 @@ const state = {
   page: 1,
   baseUrl: "http://localhost:3000/api/",
   reqCooldown: null,
+  end: false,
 };
-
-// var API = {
-//   saveExample: function(example) {
-//     return $.ajax({
-//       headers: {
-//         "Content-Type": "application/json"
-//       },
-//       type: "POST",
-//       url: "api/examples",
-//       data: JSON.stringify(example)
-//     });
-//   },
-//   getExamples: function() {
-//     return $.ajax({
-//       url: "api/examples",
-//       type: "GET"
-//     });
-//   },
-//   deleteExample: function(id) {
-//     return $.ajax({
-//       url: "api/examples/" + id,
-//       type: "DELETE"
-//     });
-//   }
-// };
 
 $(document).ready(function() {
   getReviews();
@@ -54,6 +30,20 @@ $(document).ready(function() {
     const query = { product: searchTerm }
     
     getReviews(query);
+  });
+
+  $('#nextPageBtn').click(() => {
+    if (state.end) return;
+    state.page += 1;
+
+    getReviews({ page: state.page });
+  });
+
+  $('#prevPageBtn').click(() => {
+    state.page -= 1;
+    if (state.page < 1) state.page = 1;
+    
+    getReviews({ page: state.page });
   });
 });
 
@@ -90,6 +80,22 @@ function getReviews(query = {}) {
       result => {
         const reviews = result.reviews || [];
         state.reviews = reviews;
+        state.end = state.page >= result.pages;
+
+        if (state.page === 1) {
+          $('#prevPageBtn').hide();
+        }
+        else {
+          $('#prevPageBtn').show();
+        }
+
+        if (state.end) {
+          $('#nextPageBtn').hide();
+        }
+        else {
+          $('#nextPageBtn').show();
+        }
+
         populateTiles(state.reviews);
       },
       error => {
@@ -103,9 +109,10 @@ function populateTiles(reviews) {
 
   reviews.forEach((review, index) => {
     const tileAreaId = (index % 2 === 0) ? 'tileAreaL' : 'tileAreaR';
+    const product = review.product || '';
     const tile = $(`
       <div class="tile" data-reviewIndex="${index}" >
-        <span class="tileProduct">${review.product}</span>
+        <span class="tileProduct">${product.slice(0, 18)}...</span>
         <img class="itemImage" src="${review.imgUrl}">
       </div>
     `);
@@ -125,7 +132,7 @@ function showReview(reviewIndex) {
   $('#prodTitle').text(review.product);
   $('#userName').text('User: ' + review.User.username);
   $('#userRating').text(`Rating: ${review.rating}/5`);
-  $('#productInfo').text(review.text);
+  $('#productInfo').text(review.text.slice());
   $('#userImage').attr('src', review.imgUrl);
 }
 
@@ -146,8 +153,6 @@ function showLogin() {
 };
 
 const loggedIn = () => {
-  
-
   // sendLoginRequest(username, password);
   const signedIn = `
     <span class="back">Signed In As: ${username}</span>

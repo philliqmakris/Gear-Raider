@@ -75,9 +75,8 @@ async function sendReviews(res, options, page) {
   if (reviews.length === 0) return res.status(200).json('No reviews found.');
   
   const pages = Math.ceil(result.count / limit);
-  const end = result.count < limit;
 
-  res.status(200).json({ reviews, 'count': result.count, pages, end });
+  res.status(200).json({ reviews, 'count': result.count, pages });
 }
 
 module.exports = router;
