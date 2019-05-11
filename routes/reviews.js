@@ -1,6 +1,7 @@
 const validator = require('validator');
 const auth = require('../middleware/auth');
 const db = require("../models/index");
+const Op = db.Sequelize.Op;
 const express = require('express');
 const router = express.Router();
 
@@ -8,21 +9,23 @@ const router = express.Router();
 router.get('/', (req, res) => {
   let page = parseInt(req.query.page) || 1;
   const product = req.query.product;
-  const user = req.query.user;
+  const userId = req.query.userId;
 
   const options = {
     include: [
       {
         model: db.User,
-        attributes: ['username', 'id'],
+        attributes: { exclude: 'password' },
         nested: true,
       },
     ],
     where: {},
   };
 
-  if (product) options.where.product = product;
-  if (user) options.where.userId = user;
+  if (userId) options.where.userId = userId;
+  if (product) options.where.product = {
+    [Op.like]: '%' + product + '%',
+  };
 
   sendReviews(res, options, page);
 });
@@ -35,9 +38,9 @@ router.post('/', auth, async (req, res) => {
 
   // validation
   if (!(
-    validator.isURL(review.imgUrl, { protocols: ['http','https'] })
-    && validator.isInt(review.rating + '', { min: 0, max: 5, allow_leading_zeroes: false })
-    && validator.isLength(review.text, { min:6, max: 1023 })
+    // validator.isURL(review.imgUrl + '', { protocols: ['http','https'] })
+    validator.isInt(review.rating + '', { min: 0, max: 5, allow_leading_zeroes: false })
+    && validator.isLength(review.text + '', { min:6, max: 1023 })
   )) return res.status(400).json('Invalid review');
 
   for (let prop in review) {
@@ -69,7 +72,7 @@ async function sendReviews(res, options, page) {
   const result = await db.Review.findAndCountAll(allOptions);
   const reviews = result.rows;
 
-  if (reviews.length === 0) return res.status(404).json('No reviews found.');
+  if (reviews.length === 0) return res.status(200).json('No reviews found.');
   
   const pages = Math.ceil(result.count / limit);
   const end = result.count < limit;

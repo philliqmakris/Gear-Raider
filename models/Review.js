@@ -20,14 +20,14 @@ module.exports = function(sequelize, DataTypes) {
       },
     },
     imgUrl: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(1023),
       allowNull: true,
       validate: {
-        len: [1, 255],
+        len: [1, 1023],
       },
     },
     text: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(1023),
       allowNull: true,
       validate: {
         len: [6, 1023],

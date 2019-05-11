@@ -1,99 +1,209 @@
-// Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
+const state = {
+  reviews: [],
+  page: 1,
+  baseUrl: "http://localhost:3000/api/",
+  reqCooldown: null,
+};
 
-// The API object contains methods for each kind of request we'll make
-var API = {
-  saveExample: function(example) {
-    return $.ajax({
-      headers: {
-        "Content-Type": "application/json"
+// var API = {
+//   saveExample: function(example) {
+//     return $.ajax({
+//       headers: {
+//         "Content-Type": "application/json"
+//       },
+//       type: "POST",
+//       url: "api/examples",
+//       data: JSON.stringify(example)
+//     });
+//   },
+//   getExamples: function() {
+//     return $.ajax({
+//       url: "api/examples",
+//       type: "GET"
+//     });
+//   },
+//   deleteExample: function(id) {
+//     return $.ajax({
+//       url: "api/examples/" + id,
+//       type: "DELETE"
+//     });
+//   }
+// };
+
+$(document).ready(function() {
+  getReviews();
+
+  if (document.cookie) {
+    const username = getCookie('username');
+    $('#loginArea').text('Welcome, ' + username + ' ');
+
+    const logoutBtn = $(`
+      <button>logout</button>
+    `)
+      .click(() => {
+        document.cookie = "token=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;";
+        document.cookie = "username=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;"
+        document.location.reload(false);
+      });
+
+    $('#loginArea').append(logoutBtn);
+  }
+
+  $('#searchButton').click(() => {
+    const searchTerm = $('#searchInput').val();
+    const query = { product: searchTerm }
+    
+    getReviews(query);
+  });
+});
+
+// prevent spam clicking search, etc
+function resetCooldown() {
+  state.reqCooldown = true;
+  setTimeout(() => state.reqCooldown = false, 1000);
+}
+
+function getReviews(query = {}) {
+  if (state.reqCooldown) return;
+  resetCooldown();
+
+  const token = getCookie('token');
+
+  let queryString = '';
+  for (let term in query) {
+    queryString += `?${term}=${query[term]}`;
+  }
+
+  fetch(state.baseUrl + 'reviews' + queryString, {
+    method: 'GET',
+    mode: 'cors',
+    headers: {
+      "Content-Type": "application/json",
+      'x-auth-token': token,
+    }
+  })
+    .then(async res => {
+      if (res.status !== 200) throw new Error(res.status + ' ' + await res.text());
+      return res.json();
+    })
+    .then(
+      result => {
+        const reviews = result.reviews || [];
+        state.reviews = reviews;
+        populateTiles(state.reviews);
       },
-      type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
-    });
-  },
-  getExamples: function() {
-    return $.ajax({
-      url: "api/examples",
-      type: "GET"
-    });
-  },
-  deleteExample: function(id) {
-    return $.ajax({
-      url: "api/examples/" + id,
-      type: "DELETE"
-    });
-  }
-};
+      error => {
+        console.log(error)
+      }
+    );
+}
 
-// refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
-      var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
+function populateTiles(reviews) {
+  $('.tileArea').html('');
 
-      var $li = $("<li>")
-        .attr({
-          class: "list-group-item",
-          "data-id": example.id
-        })
-        .append($a);
+  reviews.forEach((review, index) => {
+    const tileAreaId = (index % 2 === 0) ? 'tileAreaL' : 'tileAreaR';
+    const tile = $(`
+      <div class="tile" data-reviewIndex="${index}" >
+        <span class="tileProduct">${review.product}</span>
+        <img class="itemImage" src="${review.imgUrl}">
+      </div>
+    `);
 
-      var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
-
-      $li.append($button);
-
-      return $li;
+    tile.click(function() {
+      const reviewIndex = $(this).attr('data-reviewIndex')
+      showReview(reviewIndex)
     });
 
-    $exampleList.empty();
-    $exampleList.append($examples);
+    $('#' + tileAreaId).append(tile)
   });
+}
+
+function showReview(reviewIndex) {
+  const review = state.reviews[reviewIndex];
+  
+  $('#prodTitle').text(review.product);
+  $('#userName').text('User: ' + review.User.username);
+  $('#userRating').text(`Rating: ${review.rating}/5`);
+  $('#productInfo').text(review.text);
+  $('#userImage').attr('src', review.imgUrl);
+}
+
+$('#loginLink').click(showLogin);
+
+function showLogin() {
+  const html = `
+    <span class="loginText">User Name:</span>
+    <input id="userNameInput" class="jqHeadInput type="text" placeholder="Username">
+    <br />
+    <span class="loginText">Password:</span>
+    <input id="passwordInput" class="jqHeadInput" type="password" placeholder="password">
+    <button onclick="logIn()" class="signInButt" type="submit">
+      Log In
+    </button>
+  `;
+  $('#loginArea').html(html);
 };
 
-// handleFormSubmit is called whenever we submit a new example
-// Save the new example to the db and refresh the list
-var handleFormSubmit = function(event) {
-  event.preventDefault();
+const loggedIn = () => {
+  
 
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
-  };
-
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
-    return;
-  }
-
-  API.saveExample(example).then(function() {
-    refreshExamples();
-  });
-
-  $exampleText.val("");
-  $exampleDescription.val("");
+  // sendLoginRequest(username, password);
+  const signedIn = `
+    <span class="back">Signed In As: ${username}</span>
+    <div>
+      <a class="signOut" href="index.html">Sign Out</a>
+    </div>
+  `;
+  $('#loginArea').html(signedIn);
 };
 
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
-var handleDeleteBtnClick = function() {
-  var idToDelete = $(this)
-    .parent()
-    .attr("data-id");
+function logIn(query = {}) {
+  if (state.reqCooldown) return;
+  resetCooldown();
 
-  API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
-  });
-};
+  let username = $('#userNameInput').val();
+  let password = $('#passwordInput').val();
 
-// Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+  $('#userNameInput').val('');
+  $('#passwordInput').val('');
+
+  fetch(state.baseUrl + 'auth', {
+    method: 'POST',
+    mode: 'cors',
+    cache: 'no-cache',
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ username, password }),
+  })
+    .then(async res => {
+      if (res.status === 400) {
+        $('#loginArea').text('invalid username or password');
+        setTimeout(() => showLogin(), 1500);
+        throw new Error(res.status + ' ' + await res.text());
+      }
+      if (res.status !== 200) throw new Error(res.status + ' ' + await res.text());
+      
+      const user = await res.json();
+      
+      return {
+        token: res.headers.get('x-auth-token'),
+        user,
+      };
+    })
+    .then(
+      result => {
+        document.cookie = `token=${result.token};`
+        document.cookie = `username=${result.user.username};`;
+        console.log(document.cookie)
+        document.location.reload(false);
+      },
+      error => {
+        console.log(error)
+      }
+    );
+
+    username = null;
+    password = null;
+}

@@ -3,20 +3,18 @@ body {
     background-image: url("../images/bg.jpg");
     background-attachment: fixed;
     background-size: cover;
+    color: white;
 }
 
 header {
     background-color: rgb(15, 15, 15);
     color: rgb(235, 235, 235);
     font-family: 'Gugi', cursive;
-    
-    padding: 0px;
-    
+    padding: 0;
     position: fixed;
     z-index: 99;
     height: 70px;
     width: 100%;
-   
 }
 
 hr {
@@ -31,9 +29,18 @@ input {
     background-color: rgb(228, 228, 228);
 }
 
-@media (min-width: 992px) {
+#newPostContent {
+    margin-top: 20px;
+}
 
-} 
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
 .logo {
     height: 70px;
@@ -50,16 +57,13 @@ input {
     margin: 0;
 }
 
+.searchBar {
+    padding: 80px 0 0 0;
+}
+
 #loginArea {
     padding: 10px;
     float: right;
-}
-
-.signIn {
-    float: right;
-    font-size: 12px;
-    bottom: 500px;
-    padding-bottom: 5px;
 }
 
 .newPost {
@@ -97,11 +101,10 @@ input {
 }
 
 #userImage {
-    height:150px;
-    width: 200px;
+    max-width: 100%;
+    max-height: 65%;
     border-radius: 50px;
-    border-style: solid;
-    border-color: rgb(0, 0, 0);
+    margin-bottom: 10px;
 }
 
 .signInUp {
@@ -110,23 +113,22 @@ input {
     cursor: pointer;
 }
 
-#userImage {
-    height: 200px;
-    width: 300px;
-}
-
-.productInfo {
+#productInfo {
     font-size: 15px;
     color: rgb(240, 240, 240);
 }
 
-.prodTitle {
+#prodTitle {
     color: rgb(238, 238, 238);
     padding-top: 20px;
 }
 
-.userRating, .userName {
+#userRating, #userName {
     color: rgb(238, 238, 238);
+}
+
+#userName {
+    font-size: 1em;
 }
 
 .postButt {
@@ -138,10 +140,10 @@ input {
 
 .signInButt {
     font-size: 12px;
+    float: right;
 }
 
 .whole {
-    padding-top: 100px;
     z-index: 0;
 }
 
@@ -152,48 +154,49 @@ input {
 }
 
 .itemImage {
+    max-width: 160px;
+    border-radius: 5px;
+}
+
+.tile {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 160px;
     width: 160px;
-    border-radius: 30px;
-    border-color: black;
-}
-
-/*PRODUCT SECTION*/
-.item {
-    padding: 1%;
-    color: rgb(0, 0, 0);
+    margin: 1%;
     margin: 0 0 20px 0;
+    background-color: rgb(19, 19, 19);
+    border-radius: 30px;
+    overflow: hidden;
 }
 
+.tileProduct {
+    position: absolute;
+    top: 0;
+    text-align: center;
+    padding: 5px;
+    height: 29px;
+    width: 160px;
+    font-size: .8em;
+    background-color: black;
+    opacity: 0.75;
+    border-radius: 30px 30px 0 0;
+}
 
 .input-group-text {
     font-size: 200px;
 }
 
-.searchArea {
-    
-    
-   
-    
-}
-
-.searchInput {
-    
-    
-}
-
 .searchButton {
-    
    background-color: black;
    color: white;
-    
-    
-    
-    
 }
 
 .jqHeadInput {
     font-size: 13px;
+    width: 50%;
 }
 
 .props {
@@ -208,9 +211,6 @@ input {
     padding-bottom: 12px;
     font-size: 20px;
     padding-right: 10px;
-    
-    
-    
 }
 
 .signOut {
@@ -236,20 +236,6 @@ input {
     border-radius: 99px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*SCROLLBAR STYLING*/
 ::-webkit-scrollbar {
     width: 1em;
@@ -268,36 +254,3 @@ input {
   
   border-radius: 80px;
 }
-
-
-
-
-/*
-    : url("https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Fforbes-finds%2Ffiles%2F2017%2F11%2F1-640.jpg");
-
-    -: url("https://upload.wikimedia.org/wikipedia/commons/9/9a/Panasonic_SL-S250C_with_Philips_LC0305_20110106.jpg")
-
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3HIFt4t3rRdPtPuaYuJk34jbhRDEIvZqvOrLlAM1Al1VIQLTB");
-
-    background-image: url("http://www.iheartsynths.com/wp-content/uploads/2014/02/minimoog.jpg");
-
-   background-image: url("https://zfvg91lawb41hpzaf1icl6u8-wpengine.netdna-ssl.com/wp-content/uploads/2016/05/The-Best-Studio-Monitors.jpg");
-
-    background-image: url("https://icdn2.digitaltrends.com/image/poster-for-5824603359001-720x720.jpg");
-
-    background-image: url("https://cnet1.cbsistatic.com/img/JrscGpF4LeP-w1GDK14r8LH8cOA=/2013/03/15/70b992a2-fdc7-11e2-8c7c-d4ae52e62bcc/_DSC4052.jpg");
-
-    background-image: url("https://img.letgo.com/images/4d/48/aa/c7/4d48aac7b3bcbacd3faa96196703abe9.jpeg?impolicy=img_600");
-
-    background-image: url("https://masters-of-music.com/wp-content/uploads/2016/07/EZdrummer-2-Metal-Machine-560x410.jpg");
-
-    background-image: url("https://dangerousmusic.com/wp-content/uploads/2019/02/D-BOX_Plus_FINAL-954x415.jpg");
-
-    background-image: url("https://i.ytimg.com/vi/bqk-uaiiqd8/maxresdefault.jpg");
-*/
-
-
-
-
-
-

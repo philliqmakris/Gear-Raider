@@ -27,8 +27,4 @@ db
     app.listen(PORT, () => console.log("Listening on port", PORT));
   });
 
-// for testing
-console.log(jwt.sign({ id: 1 }, process.env.jwtPrivateKey));
-console.log(jwt.sign({ id: 2 }, process.env.jwtPrivateKey));
-
 module.exports = app;
