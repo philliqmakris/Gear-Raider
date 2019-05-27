@@ -86,16 +86,26 @@
         const imageUrl = $('#imageUrl').val();
         const info = $('#info').val();
 
-        $('.prodTitle').append(productName);
-        $('#rating').append(rating);
-        $('#userImage').append(imageUrl);
-        $('.productInfo').append(info);
+        $.cookie('index.html', 1);
+        $.cookie(productName);
+        $.cookie(rating);
+        $.cookie(imageUrl);
+        $.cookie(info);
+
+
+    };
+
+
+    $('.prodTitle').append(productName);
+    $('#rating').append(rating);
+    $('#userImage').append(imageUrl);
+    $('.productInfo').append(info);
 
 
 
     }
 
-    
+
 
 
 </script>
