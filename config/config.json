@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "u24u3scvubffq6o9",
-    "password": "leqldqi745errn5a",
-    "database": "j4pihwirvjla0vby",
-    "host": "u28rhuskh0x5paau.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "username": "root",
+    "password": "password",
+    "database": "gearraider",
+    "host": "localhost",
     "dialect": "mysql",
     "logging": false
   },
